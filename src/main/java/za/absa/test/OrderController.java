@@ -24,4 +24,9 @@ public class OrderController {
   public Order newOrder( @RequestBody Order order) {
     return repository.save(order);
   }
+  @GetMapping("/")
+  public ResponseEntity healthCheck(){
+    ResponseEntity responseEntity = new ResponseEntity(HttpStatus.OK);
+    return responseEntity;
+  }
 }
