@@ -21,14 +21,14 @@ public class OrderController {
   @Autowired
   private OrderRepository repository;
 
-  @GetMapping("/orders")
+  @GetMapping("/find-all")
   public List<Order> findAll() {
     List<Order> orders = new ArrayList<>();
     repository.findAll().iterator().forEachRemaining(orders::add);
     return orders;
   }
 
-  @PostMapping(value = "/order", consumes = "application/json")
+  @PostMapping(value = "/create-order", consumes = "application/json")
   public Order newOrder(@RequestBody Order order) {
     return repository.save(order);
   }
