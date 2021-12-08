@@ -27,8 +27,8 @@ public class OrderController {
     return repository.save(order);
   }
   @GetMapping("/")
-  public ResponseEntity healthCheck(){
+  public String healthCheck(){
     ResponseEntity responseEntity = new ResponseEntity(HttpStatus.OK);
-    return responseEntity;
+    return responseEntity.getStatusCode().toString();
   }
 }
